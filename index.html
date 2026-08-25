@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samsung | Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+  <body>
+    <div id="navbar"></div>
+
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <h1 class="hero-title animate-fade-up">Samsung</h1>
+        <p class="hero-subtitle animate-fade-up delay-1">Inspire the World, Create the Future</p>
+        <div class="hero-cta animate-fade-up delay-2">
+          <a href="galaxy.html" class="btn-samsung-primary">Explore Galaxy</a>
+          <a href="semiconductor.html" class="btn-samsung-outline">Discover Innovation</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
+    </section>
+
+    <section class="brands-section py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5 reveal" data-page="home">Our Brands</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <a href="galaxy.html" class="brand-card reveal" data-page="home">
+              <div class="brand-card-icon">G</div>
+              <h3>Galaxy</h3>
+              <p>Smartphones, tablets & wearables that redefine mobile.</p>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="tv-audio.html" class="brand-card reveal" data-page="home">
+              <div class="brand-card-icon">T</div>
+              <h3>TV & Audio</h3>
+              <p>QLED and Neo QLED TVs for an immersive experience.</p>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="appliances.html" class="brand-card reveal" data-page="home">
+              <div class="brand-card-icon">A</div>
+              <h3>Home Appliances</h3>
+              <p>Smart refrigerators, washers and kitchen essentials.</p>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="semiconductor.html" class="brand-card reveal" data-page="home">
+              <div class="brand-card-icon">S</div>
+              <h3>Semiconductor</h3>
+              <p>Memory and processors powering the world's technology.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="innovation-section py-5">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal" data-page="home">
+            <h2 class="innovation-title">A Legacy of Innovation</h2>
+            <p class="innovation-text">From the first flat-screen TV to foldable phones and 3nm chips, Samsung has spent decades pushing the boundaries of what technology can do. Our commitment to R&D and design excellence shapes the future of how people live, work, and connect.</p>
+            <div class="innovation-stats">
+              <div class="stat-item">
+                <span class="stat-number" data-count="74">0</span>
+                <span class="stat-label">Years of Innovation</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="200">0</span>
+                <span class="stat-label">Countries Served</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="270">0</span>
+                <span class="stat-label">Thousand Employees</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal" data-page="home">
+            <div class="innovation-image-wrapper">
+              <img src="https://images.pexels.com/photos/11932020/pexels-photo-11932020.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Samsung innovation" class="innovation-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-section py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5 reveal" data-page="home">Latest News</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="news-card reveal" data-page="home">
+              <div class="news-badge">Mobile</div>
+              <h3>Galaxy Z Fold6 Launches</h3>
+              <p>The next generation of foldable technology with AI-powered features.</p>
+              <a href="galaxy.html">Read more</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="news-card reveal" data-page="home">
+              <div class="news-badge">Display</div>
+              <h3>Neo QLED 8K Redefined</h3>
+              <p>Unprecedented picture quality with neural upscaling technology.</p>
+              <a href="tv-audio.html">Read more</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="news-card reveal" data-page="home">
+              <div class="news-badge">Semiconductor</div>
+              <h3>3nm Process Breakthrough</h3>
+              <p>Next-gen chip manufacturing for faster, more efficient computing.</p>
+              <a href="semiconductor.html">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+    <script type="module" src="scripts/home.js"></script>
+  </body>
+</html>

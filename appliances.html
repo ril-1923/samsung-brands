@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samsung | Home Appliances</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/appliances.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <section class="appliances-hero">
+      <div class="appliances-hero-overlay"></div>
+      <div class="appliances-hero-content container">
+        <h1 class="appliances-title animate-fade-up">Smart Living,<br>Fresh Every Day</h1>
+        <p class="appliances-subtitle animate-fade-up delay-1">Bespoke appliances designed for your home and your life.</p>
+        <div class="appliances-cta animate-fade-up delay-2">
+          <button class="btn-appliances-primary" id="exploreAppliancesBtn">Explore Bespoke</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="appliances-grid py-5">
+      <div class="container">
+        <h2 class="appliances-section-title text-center mb-5 reveal" data-page="appliances">Bespoke Collection</h2>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="appliance-card-large reveal" data-page="appliances">
+              <img src="https://images.pexels.com/photos/4221389/pexels-photo-4221389.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Bespoke Refrigerator" />
+              <div class="appliance-overlay">
+                <h3>Bespoke 4-Door Refrigerator</h3>
+                <p>Customizable panels, Family Hub screen, and Triple Cooling System.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="appliance-card-small reveal" data-page="appliances">
+                  <img src="https://images.pexels.com/photos/18071814/pexels-photo-18071814.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Bespoke Coffee" />
+                  <div class="appliance-overlay">
+                    <h3>Coffee Maker</h3>
+                    <p>Barista-quality at home.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="appliance-card-small reveal" data-page="appliances">
+                  <img src="https://images.pexels.com/photos/4469164/pexels-photo-4469164.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Bespoke Kitchen" />
+                  <div class="appliance-overlay">
+                    <h3>Smart Oven</h3>
+                    <p>AI-powered cooking.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="appliance-card-wide reveal" data-page="appliances">
+                  <img src="https://images.pexels.com/photos/6527057/pexels-photo-6527057.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Bespoke Kitchen Suite" />
+                  <div class="appliance-overlay">
+                    <h3>Full Kitchen Suite</h3>
+                    <p>A coordinated collection for a beautifully connected home.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="appliances-features py-5">
+      <div class="container">
+        <h2 class="appliances-section-title text-center mb-5 reveal" data-page="appliances">Smart Features</h2>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="feature-circle reveal" data-page="appliances">
+              <div class="feature-circle-icon">F</div>
+              <h3>Family Hub</h3>
+              <p>Control your home from your fridge door with a built-in touchscreen.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="feature-circle reveal" data-page="appliances">
+              <div class="feature-circle-icon">A</div>
+              <h3>AI Energy</h3>
+              <p>SmartThings monitors and optimizes energy use across all appliances.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="feature-circle reveal" data-page="appliances">
+              <div class="feature-circle-icon">W</div>
+              <h3>Wash AI</h3>
+              <p>Auto-detects fabric weight and soil for the perfect wash every time.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="feature-circle reveal" data-page="appliances">
+              <div class="feature-circle-icon">C</div>
+              <h3>Clean Station</h3>
+              <p>UV sterilization and automatic emptying for a hands-free clean.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="appliances-cta py-5">
+      <div class="container text-center">
+        <h2 class="reveal" data-page="appliances">Design Your Bespoke Home</h2>
+        <p class="reveal" data-page="appliances">Choose your colors, finishes, and finishes to match your style.</p>
+        <button class="btn-appliances-primary reveal" data-page="appliances" id="ctaAppliancesBtn">Start Designing</button>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+    <script type="module" src="scripts/appliances.js"></script>
+  </body>
+</html>
