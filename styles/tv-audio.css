@@ -1,0 +1,483 @@
+/* ===== TV & AUDIO PAGE - Warm Elegant Theme ===== */
+:root {
+  --tv-bg: #1a0f0a;
+  --tv-surface: #2a1a10;
+  --tv-surface-2: #3a2820;
+  --tv-primary: #e8943a;
+  --tv-primary-light: #f5b06b;
+  --tv-primary-glow: rgba(232, 148, 58, 0.3);
+  --tv-accent: #d4a574;
+  --tv-gold: #c9a55c;
+  --tv-text: #f5e6d3;
+  --tv-text-dim: #a89080;
+  --tv-border: rgba(201, 165, 92, 0.2);
+  --tv-success: #6abf69;
+  --tv-warning: #e8c44a;
+  --tv-error: #d4574a;
+  --tv-neutral-100: #f5e6d3;
+  --tv-neutral-200: #e0ccb5;
+  --tv-neutral-300: #c9a57b;
+  --tv-neutral-400: #a88560;
+  --tv-neutral-500: #8a6a48;
+  --tv-neutral-600: #6a5238;
+  --tv-neutral-700: #4a3828;
+  --tv-neutral-800: #2a1a10;
+  --tv-neutral-900: #1a0f0a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--tv-bg);
+  color: var(--tv-text);
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.samsung-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 16px 0;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.samsung-navbar.scrolled {
+  background: rgba(26, 15, 10, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--tv-border);
+  padding: 8px 0;
+}
+
+.samsung-navbar .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.samsung-navbar .nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--tv-gold);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.samsung-navbar .nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+}
+
+.samsung-navbar .nav-links a {
+  color: rgba(245, 230, 211, 0.7);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.samsung-navbar .nav-links a:hover {
+  color: var(--tv-primary-light);
+}
+
+.samsung-navbar .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--tv-gold);
+  transition: width 0.3s ease;
+}
+
+.samsung-navbar .nav-links a:hover::after,
+.samsung-navbar .nav-links a.active::after {
+  width: 100%;
+}
+
+.samsung-navbar .nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--tv-gold);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .samsung-navbar .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 15, 10, 0.95);
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    border-bottom: 1px solid var(--tv-border);
+  }
+  .samsung-navbar .nav-links.open { display: flex; }
+  .samsung-navbar .nav-toggle { display: block; }
+}
+
+/* ===== HERO ===== */
+.tv-hero {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a0f0a 0%, #3a2820 50%, #2a1a10 100%);
+}
+
+.tv-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(232, 148, 58, 0.1) 0%, transparent 60%);
+  animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.tv-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.pexels.com/photos/7546648/pexels-photo-7546648.jpeg?auto=compress&cs=tinysrgb&w=1400') center/cover;
+  opacity: 0.15;
+  filter: sepia(0.5) brightness(0.7);
+}
+
+.tv-hero-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.tv-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  color: var(--tv-text);
+  letter-spacing: -1px;
+  text-shadow: 0 4px 30px rgba(232, 148, 58, 0.3);
+}
+
+.tv-hero-subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--tv-text-dim);
+  margin-top: 16px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.tv-hero-cta {
+  margin-top: 40px;
+}
+
+.btn-tv-primary {
+  padding: 14px 40px;
+  background: linear-gradient(135deg, var(--tv-primary), var(--tv-gold));
+  color: var(--tv-bg);
+  border: none;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-tv-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px var(--tv-primary-glow);
+}
+
+/* ===== SHOWCASE ===== */
+.tv-showcase {
+  background: var(--tv-bg);
+}
+
+.tv-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--tv-gold);
+  letter-spacing: -0.5px;
+}
+
+.tv-text {
+  font-size: 1.05rem;
+  color: var(--tv-text-dim);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.tv-feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tv-feature-list li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+  color: var(--tv-text);
+  font-size: 0.95rem;
+}
+
+.tv-feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--tv-primary);
+  box-shadow: 0 0 10px var(--tv-primary-glow);
+}
+
+.tv-image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border: 1px solid var(--tv-border);
+  aspect-ratio: 16/10;
+}
+
+.tv-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.tv-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== LIFESTYLE ===== */
+.tv-lifestyle {
+  background: var(--tv-surface);
+}
+
+.lifestyle-card {
+  background: var(--tv-surface-2);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--tv-border);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.lifestyle-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--tv-gold);
+  box-shadow: 0 20px 50px rgba(232, 148, 58, 0.15);
+}
+
+.lifestyle-image {
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.lifestyle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.lifestyle-card:hover .lifestyle-image img {
+  transform: scale(1.08);
+}
+
+.lifestyle-body {
+  padding: 24px;
+}
+
+.lifestyle-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--tv-gold);
+  margin-bottom: 8px;
+}
+
+.lifestyle-body p {
+  color: var(--tv-text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ===== QUOTE ===== */
+.tv-quote {
+  background: linear-gradient(135deg, var(--tv-surface), var(--tv-bg));
+  border-top: 1px solid var(--tv-border);
+  border-bottom: 1px solid var(--tv-border);
+}
+
+.tv-blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--tv-text);
+  max-width: 800px;
+  margin: 0 auto 16px;
+  line-height: 1.4;
+}
+
+.tv-quote-author {
+  color: var(--tv-gold);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* ===== FOOTER ===== */
+.samsung-footer {
+  background: var(--tv-neutral-900);
+  color: rgba(245, 230, 211, 0.5);
+  padding: 60px 0 24px;
+  border-top: 1px solid var(--tv-border);
+}
+
+.samsung-footer .footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.samsung-footer .footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.samsung-footer .footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--tv-gold);
+  margin-bottom: 12px;
+}
+
+.samsung-footer .footer-tagline {
+  font-size: 0.9rem;
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+.samsung-footer .footer-links {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.samsung-footer .footer-col h4 {
+  color: var(--tv-text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.samsung-footer .footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.samsung-footer .footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.samsung-footer .footer-col ul li a {
+  color: rgba(245, 230, 211, 0.4);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.samsung-footer .footer-col ul li a:hover {
+  color: var(--tv-gold);
+}
+
+.samsung-footer .footer-bottom {
+  border-top: 1px solid rgba(201, 165, 92, 0.1);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(245, 230, 211, 0.3);
+}
+
+/* ===== ANIMATIONS ===== */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== TOAST ===== */
+.samsung-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--tv-surface-2);
+  color: var(--tv-gold);
+  border: 1px solid var(--tv-gold);
+  padding: 16px 28px;
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 10px 40px var(--tv-primary-glow);
+  z-index: 9999;
+  transform: translateX(400px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.samsung-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
