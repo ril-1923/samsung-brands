@@ -1,0 +1,510 @@
+/* ===== APPLIANCES PAGE - Fresh Green Theme ===== */
+:root {
+  --app-bg: #f0f7f0;
+  --app-surface: #ffffff;
+  --app-surface-2: #e8f5e9;
+  --app-primary: #2e7d32;
+  --app-primary-light: #4caf50;
+  --app-primary-glow: rgba(76, 175, 80, 0.25);
+  --app-accent: #66bb6a;
+  --app-mint: #a5d6a7;
+  --app-text: #1b3a1b;
+  --app-text-dim: #5a7a5a;
+  --app-border: rgba(76, 175, 80, 0.2);
+  --app-success: #43a047;
+  --app-warning: #fdd835;
+  --app-error: #e53935;
+  --app-neutral-100: #f1f8f1;
+  --app-neutral-200: #e0e8e0;
+  --app-neutral-300: #c8d8c8;
+  --app-neutral-400: #a8c0a8;
+  --app-neutral-500: #88a088;
+  --app-neutral-600: #6a806a;
+  --app-neutral-700: #4a604a;
+  --app-neutral-800: #2a402a;
+  --app-neutral-900: #1a301a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.samsung-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 16px 0;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.samsung-navbar.scrolled {
+  background: rgba(240, 247, 240, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(76, 175, 80, 0.1);
+  padding: 8px 0;
+}
+
+.samsung-navbar .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.samsung-navbar .nav-logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.samsung-navbar.scrolled .nav-logo {
+  color: var(--app-primary);
+}
+
+.samsung-navbar .nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+}
+
+.samsung-navbar .nav-links a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.samsung-navbar.scrolled .nav-links a {
+  color: var(--app-text);
+}
+
+.samsung-navbar .nav-links a:hover {
+  color: var(--app-primary-light);
+}
+
+.samsung-navbar .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--app-primary-light);
+  transition: width 0.3s ease;
+}
+
+.samsung-navbar .nav-links a:hover::after,
+.samsung-navbar .nav-links a.active::after {
+  width: 100%;
+}
+
+.samsung-navbar .nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.samsung-navbar.scrolled .nav-toggle {
+  color: var(--app-primary);
+}
+
+@media (max-width: 768px) {
+  .samsung-navbar .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .samsung-navbar .nav-links.open { display: flex; }
+  .samsung-navbar .nav-links a { color: var(--app-text); }
+  .samsung-navbar .nav-toggle { display: block; }
+}
+
+/* ===== HERO ===== */
+.appliances-hero {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1b3a1b 0%, #2e7d32 40%, #4caf50 100%);
+}
+
+.appliances-hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(165, 214, 167, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatOrb 7s ease-in-out infinite;
+}
+
+.appliances-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(102, 187, 106, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatOrb 9s ease-in-out infinite reverse;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+.appliances-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.pexels.com/photos/6527057/pexels-photo-6527057.jpeg?auto=compress&cs=tinysrgb&w=1400') center/cover;
+  opacity: 0.12;
+}
+
+.appliances-hero-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.appliances-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+
+.appliances-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 16px;
+  font-weight: 300;
+}
+
+.appliances-cta {
+  margin-top: 40px;
+}
+
+.btn-appliances-primary {
+  padding: 14px 40px;
+  background: white;
+  color: var(--app-primary);
+  border: none;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.btn-appliances-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+  background: var(--app-surface-2);
+}
+
+/* ===== GRID ===== */
+.appliances-grid {
+  background: var(--app-bg);
+}
+
+.appliances-section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--app-primary);
+  letter-spacing: -0.5px;
+}
+
+.appliance-card-large,
+.appliance-card-small,
+.appliance-card-wide {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 30px rgba(76, 175, 80, 0.08);
+  aspect-ratio: 4/3;
+}
+
+.appliance-card-large { aspect-ratio: 4/5; }
+.appliance-card-small { aspect-ratio: 1; }
+.appliance-card-wide { aspect-ratio: 16/9; }
+
+.appliance-card-large img,
+.appliance-card-small img,
+.appliance-card-wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.appliance-card-large:hover,
+.appliance-card-small:hover,
+.appliance-card-wide:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(76, 175, 80, 0.15);
+}
+
+.appliance-card-large:hover img,
+.appliance-card-small:hover img,
+.appliance-card-wide:hover img {
+  transform: scale(1.08);
+}
+
+.appliance-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(27, 58, 27, 0.9) 0%, transparent 100%);
+  color: white;
+}
+
+.appliance-overlay h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.appliance-overlay p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+/* ===== FEATURES ===== */
+.appliances-features {
+  background: var(--app-surface);
+}
+
+.feature-circle {
+  text-align: center;
+  padding: 32px 20px;
+  border-radius: 20px;
+  background: var(--app-surface-2);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.feature-circle:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(76, 175, 80, 0.12);
+  background: white;
+}
+
+.feature-circle-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--app-primary), var(--app-primary-light));
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px var(--app-primary-glow);
+}
+
+.feature-circle:hover .feature-circle-icon {
+  transform: scale(1.1);
+}
+
+.feature-circle h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--app-primary);
+  margin-bottom: 8px;
+}
+
+.feature-circle p {
+  font-size: 0.85rem;
+  color: var(--app-text-dim);
+  line-height: 1.6;
+}
+
+/* ===== CTA ===== */
+.appliances-cta {
+  background: linear-gradient(135deg, var(--app-surface-2), var(--app-bg));
+  border-top: 1px solid var(--app-border);
+}
+
+.appliances-cta h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--app-primary);
+  margin-bottom: 12px;
+}
+
+.appliances-cta p {
+  color: var(--app-text-dim);
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+}
+
+/* ===== FOOTER ===== */
+.samsung-footer {
+  background: var(--app-neutral-900);
+  color: rgba(255,255,255,0.5);
+  padding: 60px 0 24px;
+}
+
+.samsung-footer .footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.samsung-footer .footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.samsung-footer .footer-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--app-mint);
+  margin-bottom: 12px;
+}
+
+.samsung-footer .footer-tagline {
+  font-size: 0.9rem;
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+.samsung-footer .footer-links {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.samsung-footer .footer-col h4 {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.samsung-footer .footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.samsung-footer .footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.samsung-footer .footer-col ul li a {
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.samsung-footer .footer-col ul li a:hover {
+  color: var(--app-mint);
+}
+
+.samsung-footer .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ===== ANIMATIONS ===== */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== TOAST ===== */
+.samsung-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--app-primary);
+  color: white;
+  padding: 16px 28px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 10px 40px var(--app-primary-glow);
+  z-index: 9999;
+  transform: translateX(400px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.samsung-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
